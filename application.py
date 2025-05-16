@@ -53,7 +53,7 @@ def hello_world():
     try:
         with db.engine.connect() as connection:
             connection.execute(text('SELECT 1'))
-            message = "✅ Hello Olli Successfully connected to the PostgreSQL database."
+            message = "✅ Successfully connected to the PostgreSQL database."
 
     except OperationalError as e:
         message = f"❌ Failed to connect to the PostgreSQL database: {e}"
