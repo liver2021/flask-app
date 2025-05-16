@@ -41,7 +41,7 @@ print("Hello this is Database Name:", dbname)
 application.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}:{port}/{dbname}'
 """
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres1234@database-3.cal68me0ewga.us-east-1.rds.amazonaws.com:5432/database3'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres1234@database-1.c30qa66su527.eu-west-1.rds.amazonaws.com:5432/database1'
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(application)
@@ -53,7 +53,7 @@ def hello_world():
     try:
         with db.engine.connect() as connection:
             connection.execute(text('SELECT 1'))
-            message = "✅ Successfully connected to the PostgreSQL database."
+            message = "✅ Hello Olli Successfully connected to the PostgreSQL database."
 
     except OperationalError as e:
         message = f"❌ Failed to connect to the PostgreSQL database: {e}"
